@@ -13,10 +13,16 @@ const server = http.createServer((req, res) => {
       const value2 = obj.num2;
 
       // Write code here to calculate power of a number
+      if(value1 <= 0){
+        res.statusCode=404;
+        res.end("Not Found");
+      }
+      if(value2 < 0){
+        res.statusCode=200;
+      }
       
     });
     }
 });
 
 module.exports = server;
-      
